@@ -1,4 +1,8 @@
-import type { Preview } from "@storybook/react-vite";
+import type { Preview } from '@storybook/react-vite';
+import { initialize, mswLoader } from 'msw-storybook-addon';
+import '../src/index.css';
+
+initialize();
 
 const preview: Preview = {
   parameters: {
@@ -9,6 +13,7 @@ const preview: Preview = {
       },
     },
   },
+  loaders: [mswLoader],
 };
 
 export default preview;
